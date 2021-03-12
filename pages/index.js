@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 
-export default function Home() {
+export default function Home({pokemon}) {
   return (
     <Layout title="NextJS Pokedex">
         <h1 className="text-4xl mb-8 text-center">
@@ -22,6 +22,10 @@ export async function getStaticProps(context) {
         image
       }
     })
+
+    return {
+      props: {pokemon}
+    }
   } catch (err) {
     console.error(err)
   }
