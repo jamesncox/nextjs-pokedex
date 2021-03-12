@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import Link from 'next/link'
 
 export default function Home({pokemon}) {
   return (
@@ -6,6 +7,19 @@ export default function Home({pokemon}) {
         <h1 className="text-4xl mb-8 text-center">
           NextJS Pokedex
         </h1>
+        <ul>
+          {pokemon.map((pokeman, index) => (
+            <li key={index}>
+              <Link href={`/pokemon?id=${index + 1}`}>
+                <a>
+                  <img src={pokeman.image} alt={pokeman.name} />
+                  <span>{index +1}</span>
+                  {pokeman.name}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
     </Layout>
   )
 }
