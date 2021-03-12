@@ -3,11 +3,12 @@ import Layout from '../components/Layout'
 import Link from 'next/link'
 
 export default function Pokemon({pokeman}) {
+    console.log(pokeman)
 
     return (
-        <div>
-
-        </div>
+        <Layout title={pokeman.name}>
+            <h1 className="text-4xl mb-2 text-center capitalize"></h1>
+        </Layout>
     )
 }
 
